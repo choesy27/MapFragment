@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "com.example.mapfragmenttest"
@@ -21,6 +21,11 @@ android {
         }
     }
 
+    /* 람다 표현식 사용 */
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
@@ -37,6 +42,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'com.naver.maps:map-sdk:3.8.0'                               /* 네이버 지도 SDK */
-    implementation 'com.google.android.gms:play-services-location:17.0.0'       /* 위치 정보 인터페이스 */
+    // 의존성 추가
+    implementation 'com.naver.maps.open:naver-map-ncp-api:2.1.7'
+
+    // 네이버 지도 SDK
+    implementation 'com.naver.maps:map-sdk:3.8.0'
 }
